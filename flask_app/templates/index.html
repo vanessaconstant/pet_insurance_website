@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="nav">
+        <h2 class="logo"><a href="/">Pretend<span class="logo-color">Pet</span></a></h2>
+
+        <svg class="icon nav__icon iconToggle">
+            <use xlink:href="static/images/sprite.svg#menu">
+            </use>
+          </svg> 
+          
+          <ul class="list nav__list collapsible__body">
+            <li class="nav__item"><a href="/about">About</a></li>
+            <li class="nav__item"><a href="/providers">Veterinarians</a></li>
+            <li class="nav__item"><a href="/loginPage">Login</a></li>
+            <li class="nav__item signup"><a href="/registrationPage">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+    <section class="hero grid grid--col-2">
+
+        <div class="hero__content">
+            <h1 class="hero__title"> Pet Insurance Reimagined</h1>
+            <p class="hero__tagline">Even imaginary pets need to be loved and covered</p>
+            <a href="#" class="btn btn--accent">Get Started</a>
+
+        </div>
+
+       
+            <img src="../static/images/undraw_good_doggy_4wfq.png"  class="hero__image"alt="">
+        
+    </section>
+
+    <div class="benefit-section">
+
+        <h3 class="benefit-heading">Making The Switch Is Easy</h3>
+        <p class="benefit-tagline">Rated #1 insurance company for imaginary pets</p>
+        <div class="benefit-box">
+            <div class="benefit-content">
+                <div class="benefit-title-box">
+
+                    <svg class="icon  benefit-icon">
+                        <use xlink:href="static/images/sprite.svg#save-money">
+                        </use>
+                      </svg> 
+
+                    <h4 class="benefit-title">Save More</h4>
+                    <p class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit pariatur placeat ipsam iusto eum dicta eos cupiditate expedita ea esse?</p>
+
+                    <a href="#" class="link-arrow benefit-arrow">Learn More</a>
+
+                </div>
+
+            </div>
+
+            <img src="../static/images/undraw_Savings_re_eq4w.png" alt="" class="benefit-image">
+
+        </div>
+
+        <div class="benefit-box">
+
+           
+
+            <div class="benefit-content reverse">
+                <div class="benefit-title-box">
+
+                    <svg class="icon  benefit-icon">
+                        <use xlink:href="static/images/sprite.svg#no-hidden-fees">
+                        </use>
+                      </svg> 
+
+                    <h4 class="benefit-title">No Hidden Fees</h4>
+                    <p class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit pariatur placeat ipsam iusto eum dicta eos cupiditate expedita ea esse?</p>
+
+                    <a href="#" class="link-arrow benefit-arrow">Learn More</a>
+
+                </div>
+
+            </div>
+
+            <img src="../static/images/undraw_Post_re_mtr4.png" alt="" class="benefit-image">
+
+        </div>
+
+        <div class="benefit-box">
+            <div class="benefit-content">
+                <div class="benefit-title-box">
+
+                    <svg class="icon benefit-icon">
+                        <use xlink:href="static/images/sprite.svg#trust">
+                        </use>
+                      </svg> 
+
+                    <h4 class="benefit-title">Agents you can trust</h4>
+                    <p class="benefit-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit pariatur placeat ipsam iusto eum dicta eos cupiditate expedita ea esse?</p>
+
+                    <a href="#" class="link-arrow benefit-arrow">Learn More</a>
+
+                </div>
+
+            </div>
+
+            <img src="../static/images/undraw_Agreement_re_d4dv.png" alt="" class="benefit-image">
+
+        </div>
+
+        
+
+    </div>
+
+    <section class="plan-area">
+
+        <h2 class="plan__title">Plans Starting as low as $40</h2>
+
+        <div class="plan grid grid--col-3">
+            
+
+                <div class="card card--secondary">
+                    <header class="card__header">
+                        <h3 class="plan__name">Entry</h3>
+                        <span class="plan__price">$40</span>
+                        <span class="plan__billing-cycle">/month</span>
+                        <span class="badge badge--secondary">10% OFF</span>
+                        <p class="plan__description">Easy start on the cloud</p>
+                    </header>
+                    <div class="card__body">
+                        
+                        <ul class="list list--tick">
+                            <li class="list__item">1 Preventive Care visit</li>
+                            <li class="list__item">3 Sick visits</li>
+                            <li class="list__item">3-pack tick medicine</li>
+                            <li class="list__item">1 bag of treats</li>
+                        </ul>
+        
+                        <button class="btn btn--outline btn--block">Buy Now</button>
+                    </div>
+                </div>
+            
+    
+
+        
+
+            <div class="card card--primary">
+                <header class="card__header">
+                    <h3 class="plan__name">Entry</h3>
+                    <span class="plan__price">$70</span>
+                    <span class="plan__billing-cycle">/month</span>
+                    <span class="badge badge--secondary">10% OFF</span>
+                    <p class="plan__description">Easy start on the cloud</p>
+                </header>
+                <div class="card__body">
+                    
+                    <ul class="list list--tick">
+                            <li class="list__item">2 Preventive Care visit</li>
+                            <li class="list__item">12 Sick visits</li>
+                            <li class="list__item">12-pack tick medicine</li>
+                            <li class="list__item">20% Coupon for daycare</li>
+                    </ul>
+
+                    <button class="btn btn--outline btn--block">Buy Now</button>
+                </div>
+            </div>
+        
+
+
+            <div class="card card--secondary">
+                <header class="card__header">
+                    <h3 class="plan__name">Entry</h3>
+                    <span class="plan__price">$100</span>
+                    <span class="plan__billing-cycle">/month</span>
+                    <span class="badge badge--secondary">10% OFF</span>
+                    <p class="plan__description">Easy start on the cloud</p>
+                </header>
+                <div class="card__body">
+                    
+                    <ul class="list list--tick">
+                        <li class="list__item">5 Preventive Care visit</li>
+                            <li class="list__item">Unlimited Sick visits</li>
+                            <li class="list__item">12-pack tick medicine</li>
+                            <li class="list__item">50% Coupon for daycare</li>
+                    </ul>
+
+                    <button class="btn btn--outline btn--block">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- end of container -->
+
+</div>
+  
+    
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

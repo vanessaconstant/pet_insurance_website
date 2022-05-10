@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <h3>heading 3</h3>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo ex dolor numquam tempora. Nesciunt unde consequatur corrupti consectetur obcaecati eos.</p>
+
+    <a href="" class="link-arrow">Learn More</a>
+
+    <span class="badge badge--primary badge--sm">10% OFF</span>
+
+
+    <ul class="list list--tick">
+        <li class="list__item">item 1</li>
+        <li class="list__item">item 2</li>
+        <li class="list__item">item 3</li>
+    </ul>
+    
+    <ul class="list list--inline">
+        <li class="list__item">item 1</li>
+        <li class="list__item">item 2</li>
+        <li class="list__item">item 3</li>
+    </ul>
+<span class="icon-container">
+
+    <svg class="icon ">
+        <use xlink:href="static/images/sprite.svg#no-hidden-fees" class="icon--primary">
+        </use>
+      </svg> 
+      
+      
+
+</span>
+
+<button class="btn btn--accent">Buy Now</button>
+<a href="#" class="btn btn--accent">Buy Now</a>
+
+<button class="btn btn--outline">Buy Now</button>
+
+<div style="width: 30%;">
+    <div class="card card--primary">
+        <header class="card__header">
+            Card Title
+        </header>
+        <div class="card__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati officia, laudantium amet fuga possimus minus vel doloribus qui at suscipit illo vitae beatae esse inventore harum ipsa praesentium sunt id.
+        </div>
+    </div>
+</div>
+
+<div style="width: 30%;">
+    <div class="plan">
+
+        <div class="card card--secondary">
+            <header class="card__header">
+                <h3 class="plan__name">Entry</h3>
+                <span class="plan__price">$14</span>
+                <span class="plan__billing-cycle">/month</span>
+                <span class="badge badge--secondary">10% OFF</span>
+                <span class="plan__description">Easy start on the cloud</span>
+            </header>
+            <div class="card__body">
+                
+                <ul class="list list--tick">
+                    <li class="list__item">Unlimited Websites</li>
+                    <li class="list__item">Unlimited Bandwidth</li>
+                    <li class="list__item">100 GB SSD Storage</li>
+                    <li class="list__item">3 GB RAM</li>
+                </ul>
+
+                <button class="btn btn--outline btn--block">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="collapsible">
+ <div class="collapsible__header">
+     <h3>Section 1</h3>
+
+     <svg  class="icon iconToggle">
+        <use xlink:href="static/images/sprite.svg#chevron" class="icon--blue" > 
+        </use>
+      </svg> 
+
+
+ </div>
+
+ <div class="collapsible__body" id="body">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia eius blanditiis nam in assumenda velit possimus nostrum reiciendis sint.
+     </p>
+ </div>
+
+ <button onclick="collapse()" class="btn btn--accent">Buy Now</button>
+
+</div>
+
+
+<p><span class="bold-text">Date of Service:</span> {{claim_info.date_service.strftime('%m/%d/%Y')}}</p>
+
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

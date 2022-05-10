@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <nav class="nav reg-login--nav nav-dash">
+        <h2 class="logo"><a href="/">Pretend<span class="logo-color">Pet</span></a></h2>
+
+        <svg class="icon nav__icon iconToggle">
+            <use xlink:href="static/images/sprite.svg#menu">
+            </use>
+          </svg> 
+          
+          <ul class="list nav__list collapsible__body">
+            <li class="nav__item"><a href="/newClaim" class="badge badge--primary" id="new-claim">New Claim</a></li>
+            <li class="nav__item signup logout"><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="dahshboard__container">
+        
+        <div class="dashboard__body">
+
+            <h2>Welcome {{user_info.first_name}}!</h2>
+
+            <a href="/newPet" class="badge badge--primary" id="add__pet-btn"> + Add Pet</a>
+
+            <div class="dashboard_pet_list">
+                    {%for pet in all_pets%}
+                <div class="card card--primary pet__card">
+                   <header class="card__header"> 
+                        <div class="pet__name"> {{pet.pet_name}} </div>
+                    </header>
+                    <div class="card__body">
+                        
+                        <ul class="list ">
+                                <li class="list__item">{{pet.birthday.strftime('%m/%d/%Y')}}</li>
+                                <li class="list__item">{{pet.breed}}</li>
+                                
+                        </ul>
+        
+                    </div>
+                </div>
+
+                {%endfor%}
+
+            </div>
+
+            <h3>Claims</h3>
+            <div class="dashboard_claim-list">
+                {%for claim in all_claims %}
+                <div class="claim-details">
+                    <div class="claim-details-header">
+                        <h4>Claim ID: {{claim.claim_id}}</h4> 
+                    </div>
+                    
+                    <div class="claims-details-block"> 
+                        <div class="claims-details-block1">
+                            <p> <span class="bold-text">Pet:</span> {{claim.pet.pet_name}}</p>
+                            <p><span class="bold-text">Total Chage:</span> ${{claim.charge}}</p>
+                        </div>
+                        <div class="claims-details-block2">
+                            <p><span class="bold-text">Service Type:</span> {{claim.service_tye}}</p>
+                            <p><span class="bold-text">Date of Service:</span> {{claim.date_service.strftime('%m/%d/%Y')}}</p>
+                        </div>
+                    </div>
+                    
+                    <a href="/viewClaim/{{claim.pet.id}}" class="badge badge--primary view-claim-btn">View Claim</a>
+                    <a href="/editClaim/{{claim.id}}" class="badge badge--primary view-claim-btn">Edit Claim</a>
+                </div>
+                {%endfor%}
+            </div>
+
+                
+        </div>
+
+        <div class="dashboard-sidebar">
+            <div class="dashboard-sidebar-image-box">
+
+                <a href="/providers" class="find-provider-link">
+                <h4>Find a provider</h4>
+                
+                    <img src="../static/images/find_a_provider.png" alt="image of map" class="sidebar__image">
+                </a>
+                
+            </div>
+            <div class="dashboard-sidebar-blogs">
+                <div class="sidebar-blogs-header">
+                    <h4>Blogs</h4>
+                </div>
+
+                <div class="sidebar-blogs-body list">
+                    <ul>
+                        <li class="list__items"><a href="#">What should I do if my dog eats chocolate?</a></li>
+                        <li class="list__items"><a href="#">The best way to prevent ticks</a></li>
+                        <li class="list__items"><a href="#">How to deal with separation anxiety?</a></li>
+                        <li class="list__items"><a href="#">Safest toys for dogs</a></li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+            <div class="dashboard-sidebar-usefullinks">
+                <div class="useful-links-header">
+                    <h4>Useful Links</h4>
+                </div>
+                <div class="useful-links-body list">
+                    <ul>
+                        <li class="list__items"><a href="#">Chat with us</a></li>
+                        <li class="list__items"><a href="#">Call us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+            
+
+    </div>
+
+
+    
+
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

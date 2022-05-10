@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="nav">
+        <h2 class="logo"><a href="/">Pretend<span class="logo-color">Pet</span></a></h2>
+
+        <svg class="icon nav__icon iconToggle">
+            <use xlink:href="static/images/sprite.svg#menu">
+            </use>
+          </svg> 
+          
+          <ul class="list nav__list collapsible__body">
+            <li class="nav__item"><a href="/about">About</a></li>
+            <li class="nav__item"><a href="/providers">Veterinarians</a></li>
+            <li class="nav__item"><a href="/loginPage">Login</a></li>
+            <li class="nav__item signup"><a href="/registrationPage">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-box">
+        <img src="../static/images/undraw_winter_road_mcqj.png" alt="" class="about-image">
+        <div class="about-content">
+            <h3 class="about-title">Our Story</h3>
+            <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt atque, dicta autem consequuntur beatae quo rem, quae ducimus unde asperiores a perspiciatis voluptates quos, fugit aliquam voluptate assumenda sed eveniet iste quaerat exercitationem sequi distinctio quod. Ipsa, adipisci numquam.</p>
+        </div>
+
+       
+    </div>
+
+  
+    
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

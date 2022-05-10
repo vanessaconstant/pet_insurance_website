@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Add a New Pet</title>
+</head>
+<body>
+    
+
+    <div class="registration__container">
+
+        <nav class="nav reg-login--nav nav-dash">
+            <h2 class="logo"><a href="/">Pretend<span class="logo-color">Pet</span></a></h2>
+    
+            <svg class="icon nav__icon iconToggle">
+                <use xlink:href="static/images/sprite.svg#menu">
+                </use>
+              </svg> 
+              
+              <ul class="list nav__list collapsible__body">
+                <li class="nav__item"><a href="/dashboard">Dashboard</a></li>
+                <li class="nav__item signup logout"><a href="/logout">Log out</a></li>
+            </ul>
+        </nav>
+
+        <h2 class="claim__head">Add a new pet</h2>
+
+
+        <div class="claim__box">
+
+            
+            <div class="claim__bar"></div>
+            <div class="claim__form ">
+                
+
+                <form action="/createPet" method="post">
+
+                    <h3 class="claim__title">New Pet</h3>
+
+                    <label for="pet_name">Name:</label>
+                    <input type="text" name="pet_name" class="pet_name">
+
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" name="birthday" class="birthday">
+                    <label for="breed">Breed:</label>
+                    <select name="breed" id="breed" class="breed">
+                        <option value="doberman">Doberman</option>
+                        <option value="german sheperd">German Sheperd</option>
+                        <option value="labrador">Labrador</option>
+                        <option value="husky">Husky</option>
+                        <option value="yorky">Yorky</option>
+                    </select>   
+
+                    <button class="btn btn--accent login-reg__btn">Add Pet</button>
+                </form>
+            </div>
+        </div>
+
+        
+
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

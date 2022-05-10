@@ -1,0 +1,88 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="nav">
+        <h2 class="logo"><a href="/">Pretend<span class="logo-color">Pet</span></a></h2>
+
+        <svg class="icon nav__icon iconToggle">
+            <use xlink:href="static/images/sprite.svg#menu">
+            </use>
+          </svg> 
+          
+          <ul class="list nav__list collapsible__body">
+            <li class="nav__item"><a href="/about">About</a></li>
+            <li class="nav__item"><a href="#">Veterinarians</a></li>
+            <li class="nav__item"><a href="/loginPage">Login</a></li>
+            <li class="nav__item signup"><a href="/registrationPage">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="provider_search">
+
+        <form action="/search" method="post">
+            <label for="search">Find a Veterinarian:</label>
+            <input type="search" name="location" class="provider_search_bar">
+            <input type="submit" class="btn btn--accent" value="Search">
+        </form>
+    </div>
+
+    <div class="provider-lookup-container">
+
+        <div class="provider-list">
+            <h3 class="map-title">Local Veterinarians</h3>  
+            {%for providers in all_providers%}
+            <div class="provider-information">
+           
+                <h4 class="provider-office_name">{{providers.name}}</h4>
+
+                <p class="provider_address">{{providers.location.address1}}</p>
+                <p class="provider_city_st_zip">{{providers.location.city}}, {{providers.location.state}} {{providers.location.zip_code}}</p>
+                <p class="provider_address"><a href="tel:{{providers.phone}}">{{providers.phone}}</a></p>
+
+                <div class="coordinate-box">
+                    <p class="lat">{{providers.coordinates.latitude}}</p>
+                    <p class="lng">{{providers.coordinates.longitude}}</p>
+                </div>
+            
+                
+            </div>
+            {%endfor%}
+        </div>
+
+    
+       <div class="provider-map">
+         <h3 class="map-title">Provider Map</h3>  
+
+        <div id="map"></div>
+
+       </div>
+
+        
+
+    </div>
+    
+  
+    
+    
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnV6qG7NmXlFccSCapJuQhbLuidhXhYjs&callback=initMap">
+</script>
+</body>
+</html>
+
+
