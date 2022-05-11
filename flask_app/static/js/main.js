@@ -1,4 +1,5 @@
-const toggleBar = document.querySelector(".iconToggle")
+
+       const toggleBar = document.querySelector(".iconToggle")
 
 
 toggleBar.addEventListener("click",
